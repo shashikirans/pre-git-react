@@ -13,6 +13,25 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "config": {
+    "pre-git": {
+      "enabled": true,
+      "msg-pattern": "^(US|DE)\\d+ - .+",
+      "commit-msg": "simple",
+      "pre-commit": [
+        "grunt jshint"
+      ],
+      "post-commit": "git status",
+      "pre-push": [
+        "rm -rf node_modules",
+        "npm install",
+        "npm build",
+        "npm test"
+      ],
+      "post-checkout": "npm install",
+      "post-merge": "npm install"
+    }
+  },
   "release": {
     "analyzeCommits": "simple-commit-message"
   },
