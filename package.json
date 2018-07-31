@@ -19,7 +19,7 @@
       "msg-pattern": "^(US|DE)\\d+ - .+",
       "commit-msg": "simple",
       "pre-commit": [
-        "grunt jshint"
+        "npm start"
       ],
       "post-commit": "git status",
       "pre-push": [
